@@ -19,29 +19,30 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 		{"push", _push},
 		{"pall", _pall},
 		{NULL, NULL}
-	}
+	};
 	/*Tokenzing the commands args to be executed */
 	c_op = strtok(command, delim);
 	if (c_op && c_op[0] == '#')
 		return (0);
 	buf.arg = strtok(NULL, delim);
-	while (opt[i].opcode && op)
+	while (opt[i].opcode && c_op)
 	{
 		if (strcmp(c_op, opt[i].opcode) == 0)
 		{
-			opt[i].f(stack, count);
+			opt[i].f(head, count);
 			return (0);
 		}
-		if (c_op && !opt[i].opcodes)
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", count, op);
-			fclose(file);
-			free(command);
-			free_dlist(*head);
-			exit(EXIT_FAILURE);
-		}
-		return (1);
+		i++;
 	}
+	if (c_op && !opt[i].opcode)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", count,c_op);
+		fclose(file);
+		free(command);
+		free_dlist(*head);
+		exit(EXIT_FAILURE);
+	}
+	return (1);
 
 
 }

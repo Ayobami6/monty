@@ -49,15 +49,22 @@ typedef struct buf_obj
 	char *arg;
 	FILE *file;
 	char *command;
+	int flag;
 }  buf_obj;
 extern buf_obj buf;
-extern typedef char *string;
+typedef char *string;
 
 /*DLL Functions*/
 void free_dlist(stack_t *head);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 
 /**Opcodes execute functon*/
 int exec_op(string command, stack_t **head, unsigned int count, FILE *file);
+
+/*Stack operation functions*/
+void _push(stack_t **head, unsigned int line_number);
+void _pall(stack_t **head, unsigned int line_number);
 
 
 #endif

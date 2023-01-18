@@ -1,5 +1,5 @@
 #include "monty.h"
-buf = {NULL, NULL, NULL};
+buf_obj buf = {NULL, NULL, NULL};
 
 /**
  * main - main function for monty interpreter

@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
+* exec_op - execute the opcode
+* @head: head linked list - stack
+* @count: line_counter
 * @file: poiner to monty file
-* @content: line content
+* @command: line content
 * Return: no return
 */
 
@@ -20,7 +20,6 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 		{"pall", _pall},
 		{NULL, NULL}
 	}
-	
 	/*Tokenzing the commands args to be executed */
 	c_op = strtok(command, delim);
 	if (c_op && c_op[0] == '#')

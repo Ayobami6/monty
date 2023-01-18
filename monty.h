@@ -42,6 +42,7 @@ typedef struct instruction_s
  * @arg: parsed args
  * @file: monty file pointer
  * @command: line commands
+ * @flag: arg flag
  * Description: parameters objects
  */
 typedef struct buf_obj

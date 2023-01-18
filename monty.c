@@ -1,5 +1,5 @@
 #include "monty.h"
-buf_obj buf = {NULL, NULL, NULL};
+
 
 /**
  * main - main function for monty interpreter
@@ -9,6 +9,7 @@ buf_obj buf = {NULL, NULL, NULL};
  */
 int main(int argc, string argv[])
 {
+	buf_obj buf = {NULL, NULL, NULL};
 	string command;
 	FILE *file;
 	size_t size = 0;

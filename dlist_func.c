@@ -45,13 +45,13 @@ void addnode(stack_t **head, int n)
 
 /**
  * addqueue - adds a queue to the dll
- * @head: head of the node 
+ * @head: head of the node
  * @n: integer number
  */
 void addqueue(stack_t **head, int n)
 {
 	stack_t *new_node, *tmp;
-	
+
 	tmp = *head;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)

@@ -36,7 +36,7 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 	}
 	if (c_op && !opt[i].opcode)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", count,c_op);
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, c_op);
 		fclose(file);
 		free(command);
 		free_dlist(*head);

@@ -32,7 +32,7 @@ void _push(stack_t **head, unsigned int line_number)
 		fclose(buf.file);
 		free(buf.command);
 		free_dlist(*head);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	n = atoi(buf.arg);
 	if (buf.flag == 0)

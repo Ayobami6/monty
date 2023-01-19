@@ -17,6 +17,9 @@ void _add(stack_t **head, unsigned int line_number)
 	if (tmp == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);
+		fclose(buf.file);
+		free(buf.command);
+		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
 	while (tmp)
@@ -100,11 +103,17 @@ void _div(stack_t **head, unsigned int line_number)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fclose(buf.file);
+		free(buf.command);
+		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
 	if (tmp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
+		fclose(buf.file);
+		free(buf.command);
+		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
 	result = tmp->next->n / tmp->n;

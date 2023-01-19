@@ -27,6 +27,9 @@ void _add(stack_t **head, unsigned int line_number)
 	if (head == NULL ||(*head)->next == NULL || len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);
+		fclose(buf.file);
+		free(buf.command);
+		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *head;

@@ -72,9 +72,6 @@ void _pint(stack_t **head, unsigned int line_number)
 	if (tmp == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		fclose(buf.file);
-		free(buf.command);
-		free_dlist(tmp);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", tmp->n);

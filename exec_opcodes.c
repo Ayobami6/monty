@@ -20,6 +20,7 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 	/*Tokenzing the commands args to be executed */

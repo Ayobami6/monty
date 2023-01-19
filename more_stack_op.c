@@ -14,13 +14,17 @@ void _add(stack_t **head, unsigned int line_number)
 
 	tmp = *head;
 	len = 0;
-	tmp = *head;
-	while (tmp != NULL)
+	if (tmp == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+	while (tmp)
 	{
 		tmp = tmp->next;
 		len++;
 	}
-	if (len < 2)
+	if (head == NULL ||(*head)->next == NULL || len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);
 		exit(EXIT_FAILURE);

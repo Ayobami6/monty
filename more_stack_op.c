@@ -26,7 +26,7 @@ void _add(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tmp = *head;
-	sum = (*head)->n + (*head)->next->n;
+	sum = (*head)->next->n + (*head)->n;
 	_pop(head, line_number);
 	(*head)->n = sum;
 

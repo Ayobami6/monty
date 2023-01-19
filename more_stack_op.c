@@ -1,7 +1,7 @@
 #include "monty.h"
 
 
-/*
+/**
  * _add - adds the top number and the next number in stacked dll
  * @head: head of am stack dll
  * @line_number: line number

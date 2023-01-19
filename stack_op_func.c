@@ -68,7 +68,9 @@ void _pall(stack_t **head, unsigned int line_number)
 void _pint(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
+
 	tmp = *head;
+
 	if (tmp == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
@@ -85,7 +87,9 @@ void _pint(stack_t **head, unsigned int line_number)
 void _pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
+
 	tmp = *head;
+
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
@@ -93,7 +97,7 @@ void _pop(stack_t **head, unsigned int line_number)
 	}
 
 	*head = tmp->next;
-	if(*head)
+	if (*head)
 		(*head)->prev = NULL;
 	free(tmp);
 }
@@ -110,7 +114,7 @@ void _swap(stack_t **head, unsigned int line_number)
 	int num;
 
 	tmp = *head;
-	if(tmp == NULL || tmp->next == NULL)
+	if (tmp == NULL || tmp->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);

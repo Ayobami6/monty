@@ -60,3 +60,20 @@ void _pall(stack_t **head, unsigned int line_number)
 }
 
 
+/**
+ * _pint - prints the top element of a stacked dll
+ * @head: head of dll
+ * @line_number: line number
+ */
+void _pint(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+	tmp = *head;
+	if (tmp == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", tmp->n);
+}
+

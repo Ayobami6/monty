@@ -18,6 +18,7 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 	instruction_t opt[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	/*Tokenzing the commands args to be executed */

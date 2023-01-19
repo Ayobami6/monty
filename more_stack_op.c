@@ -13,17 +13,13 @@ void _add(stack_t **head, unsigned int line_number)
 	int sum;
 
 	tmp = *head;
-	len = 0;
-	if (tmp == NULL)
+	/*if (tmp == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);
 		exit(EXIT_FAILURE);
-	}
-	while (tmp)
-	{
+	}*/
+	for (len = 0; tmp != NULL; len++)
 		tmp = tmp->next;
-		len++;
-	}
 	if (head == NULL || (*head)->next == NULL || len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);

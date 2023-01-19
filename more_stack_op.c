@@ -24,7 +24,7 @@ void _add(stack_t **head, unsigned int line_number)
 		tmp = tmp->next;
 		len++;
 	}
-	if (head == NULL ||(*head)->next == NULL || len < 2)
+	if (head == NULL || (*head)->next == NULL || len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line_number);
 		fclose(buf.file);
@@ -76,5 +76,41 @@ void _sub(stack_t **head, unsigned int line_number)
 	tmp->next->n = result;
 	(*head) = tmp->next;
 	free(tmp);
+}
+
+
+/**
+ * _div - divides the next element by the top element in dll
+ * @head: head of dll
+ * @line_number: line number
+ */
+void _div(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+	int len, result;
+	len = 0;
+	tmp = *head;
+
+	while (tmp)
+	{
+		tmp = tmp->next;
+		len++;
+	}
+	tmp = *head;
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (tmp->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = tmp->next->n / tmp->n;
+	tmp->next->n = result;
+	*head = tmp->next;
+	free(tmp);
+
 }
 

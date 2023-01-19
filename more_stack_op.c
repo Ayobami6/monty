@@ -36,3 +36,16 @@ void _add(stack_t **head, unsigned int line_number)
 
 }
 
+
+
+/**
+ * _nop - does nothing on the satck
+ * @head: the head of the stack
+ * @line_number: line number
+ */
+void _nop(stack_t **head, unsigned int line_number)
+{
+	(void)head;
+	(void)line_number;
+}
+

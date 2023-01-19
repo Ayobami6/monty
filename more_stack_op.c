@@ -52,3 +52,29 @@ void _nop(__attribute__((unused))stack_t **head, __attribute__((unused)) unsigne
 	;
 }
 
+
+/**
+ * _sub - subtracts the top element from the nxt element in a dll
+ * @head: head of a dll
+ * @line_number: line number
+ */
+void _sub(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+	int result, count;
+
+	tmp = *head;
+	for (count = 0; tmp != NULL; count++)
+		tmp = tmp->next;
+	if (count < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp = *head;
+	result = tmp->next->n - tmp->n;
+	tmp->next->n = result;
+	(*head) = tmp->next;
+	free(tmp);
+}
+

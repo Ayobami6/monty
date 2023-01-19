@@ -48,9 +48,9 @@ void _push(stack_t **head, unsigned int line_number)
  */
 void _pall(stack_t **head, unsigned int line_number)
 {
-	(void)line_number;
 	stack_t *tmp;
-
+	(void)line_number;
+	
 	tmp = *head;
 
 	while (tmp)

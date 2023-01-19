@@ -1,6 +1,7 @@
 #include "monty.h"
-
-
+#include <stdio.h>
+#include <stdlib.h>
+buf_obj buf = {NULL, NULL, NULL, 0};
 /**
  * main - main function for monty interpreter
  * @argc: argument count
@@ -9,10 +10,10 @@
  */
 int main(int argc, string argv[])
 {
-	buf_obj buf = {NULL, NULL, NULL};
-	string command;
+	char *command;
 	FILE *file;
 	size_t size = 0;
+	/*string str = NULL;*/
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int count = 0;

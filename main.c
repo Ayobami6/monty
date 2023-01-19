@@ -12,9 +12,9 @@ int main(int argc, string argv[])
 {
 	char *command;
 	FILE *file;
-	size_t size = 0;
+	size_t n = 0;
 	/*string str = NULL;*/
-	ssize_t read_line = 1;
+	ssize_t readl = 1;
 	stack_t *stack = NULL;
 	unsigned int count = 0;
 
@@ -31,13 +31,13 @@ int main(int argc, string argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (read_line > 0)
+	while (readl > 0)
 	{
 		command = NULL;
-		read_line = getline(&command, &size, file);
+		readl = getline(&command, &n, file);
 		buf.command = command;
 		count++;
-		if (read_line > 0)
+		if (readl > 0)
 			exec_op(command, &stack, count, file);
 		free(command);
 	}

@@ -1,7 +1,7 @@
 #include "monty.h"
+#include "buf.h"
 #include <stdio.h>
 #include <stdlib.h>
-buf_obj buf = {NULL, NULL, NULL, 0};
 /**
  * main - main function for monty interpreter
  * @argc: argument count

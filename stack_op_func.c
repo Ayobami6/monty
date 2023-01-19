@@ -50,7 +50,6 @@ void _pall(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
 	(void)line_number;
-	
 	tmp = *head;
 
 	while (tmp)

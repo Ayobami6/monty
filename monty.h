@@ -69,6 +69,8 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file);
 void _push(stack_t **head, unsigned int line_number);
 void _pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
+void _pop(stack_t **head, unsigned int line_number);
+
 
 
 #endif

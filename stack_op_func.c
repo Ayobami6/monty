@@ -77,3 +77,23 @@ void _pint(stack_t **head, unsigned int line_number)
 	printf("%d\n", tmp->n);
 }
 
+/**
+ * _pop - rempves the top element of dll
+ * @head: head of dll
+ * @line_number: line number
+ */
+void _pop(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+	tmp = *head;
+	if (!tmp)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if(*head)
+		(*head)->prev = NULL;
+	(*head) = tmp->next;
+	free(tmp);
+}
+

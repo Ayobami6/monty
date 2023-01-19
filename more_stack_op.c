@@ -33,6 +33,7 @@ void _add(stack_t **head, unsigned int line_number)
 	sum = tmp->n + tmp->next->n;
 	tmp->next->n = sum;
 	*head = tmp->next;
+	free(tmp);
 
 }
 

@@ -30,6 +30,7 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 		{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL}
 	};
 	/*Tokenzing the commands args to be executed */

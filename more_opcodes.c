@@ -58,16 +58,19 @@ void _pchar(stack_t **head, unsigned int line_number)
  */
 void _pstr(stack_t **head, unsigned int line_number)
 {
+	stack_t *tmp;
 	(void)line_number;
 
-	while (*head != NULL)
+	tmp = *head;
+
+	while (tmp)
 	{
-		if ((*head)->n > 127 || (*head)-> n < 1)
+		if (tmp->n > 127 || tmp-> n <= 0)
 		{
 			break;
 		}
-		printf("%c", (*head)->n);
-		*head = (*head)->next;
+		printf("%c", tmp->n);
+		tmp = tmp->next;
 	}
 	printf("\n");
 }

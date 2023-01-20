@@ -134,7 +134,7 @@ void _mul(stack_t **head, unsigned int line_number)
 	}
 	tmp = (*head)->n;
 	_pop(head, line_number);
-	(*head)->n = tmp;
+	(*head)->n *= tmp;
 
 }
 

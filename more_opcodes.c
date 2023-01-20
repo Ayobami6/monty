@@ -50,3 +50,25 @@ void _pchar(stack_t **head, unsigned int line_number)
 	printf("%c\n", tmp->n);
 }
 
+
+/**
+ * _pstr - prints out a string from the top
+ * @head: head of stack dll
+ * @line_number: line number
+ */
+void _pstr(stack_t **head, unsigned int line_number)
+{
+	(void)line_number;
+
+	while (*head != NULL)
+	{
+		if ((*head)->n > 127 || (*head)-> n < 1)
+		{
+			break;
+		}
+		printf("%c", (*head)->n);
+		*head = (*head)->next;
+	}
+	printf("\n");
+}
+

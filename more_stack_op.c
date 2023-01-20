@@ -78,18 +78,9 @@ void _sub(stack_t **head, unsigned int line_number)
  */
 void _div(stack_t **head, unsigned int line_number)
 {
-	stack_t *tmp;
-	int len, result;
+	int result;
 
-	len = 0;
-	tmp = *head;
-
-	while (tmp)
-	{
-		tmp = tmp->next;
-		len++;
-	}
-	if (len < 2)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		fclose(buf.file);
@@ -97,8 +88,8 @@ void _div(stack_t **head, unsigned int line_number)
 		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *head;
-	if (tmp->n == 0)
+
+	if ((*head)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(buf.file);

@@ -75,3 +75,34 @@ void _pstr(stack_t **head, unsigned int line_number)
 	printf("\n");
 }
 
+
+/**
+ * _rotl - rotates the stack to the top
+ * @head: head of the stack
+ * @line_number: line number
+ */
+void _rotl(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp, *temp;
+
+	(void)line_number;
+	tmp = *head;
+
+	if (!tmp || !tmp->next)
+	{
+		return;
+	}
+	temp = tmp->next;
+	temp->prev = NULL;
+
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = tmp;
+	(*head) = temp;
+
+}
+

@@ -133,7 +133,7 @@ void _mul(stack_t **head, unsigned int line_number)
 
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *head;

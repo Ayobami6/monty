@@ -122,26 +122,19 @@ void _div(stack_t **head, unsigned int line_number)
  */
 void _mul(stack_t **head, unsigned int line_number)
 {
-	stack_t *tmp;
-	int len, result;
+	int tmp;
 
-	while (tmp)
-	{
-		tmp = tmp->next;
-		len++;
-	}
-
-	if (len < 2)
+	if ((*head) == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		fclose(buf.file);
+		free(buf.command);
+		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *head;
-	result = tmp->next->n * tmp->n;
-	tmp->next->n = result;
-	*head = tmp->next;
-	free(tmp);
-
+	tmp = (*head)->n;
+	_pop(head, line_number);
+	(*head)->n = tmp;
 
 }
 

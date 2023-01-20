@@ -48,6 +48,5 @@ void _pchar(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", tmp->n);
-	free(tmp);
 }
 

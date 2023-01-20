@@ -113,3 +113,35 @@ void _div(stack_t **head, unsigned int line_number)
 
 }
 
+
+
+/**
+ * _mul - multiplies the top and the next numbers in dll
+ * @head: head of a dll
+ * @line_number: line number in the file
+ */
+void _mul(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+	int len, result;
+
+	while (tmp)
+	{
+		tmp = tmp->next;
+		len++;
+	}
+
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp = *head;
+	result = tmp->next->n * tmp->n;
+	tmp->next->n = result;
+	*head = tmp->next;
+	free(tmp);
+
+
+}
+

@@ -106,10 +106,9 @@ void _div(stack_t **head, unsigned int line_number)
 		free_dlist(*head);
 		exit(EXIT_FAILURE);
 	}
-	result = tmp->next->n / tmp->n;
-	tmp->next->n = result;
-	*head = tmp->next;
-	free(tmp);
+	result = (*head)->n;
+	_pop(head, line_number);
+	(*head)->n /= result;
 
 }
 

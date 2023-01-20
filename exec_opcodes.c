@@ -27,6 +27,7 @@ int exec_op(string command, stack_t **head, unsigned int count, FILE *file)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"pchar", _pchar},
 		{NULL, NULL}
 	};
 	/*Tokenzing the commands args to be executed */

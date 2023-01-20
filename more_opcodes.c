@@ -25,3 +25,29 @@ void _mod(stack_t **head, unsigned int line_number)
 	(*head)->n %= result;
 }
 
+
+/**
+ * _pchar - prints char at the top dll stack followed by newline
+ * @head: head of the dll stack
+ * @line_number: line number
+ */
+void _pchar(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	tmp = *head;
+
+	if (tmp == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (tmp->n > 127 || tmp->n < 0)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", tmp->n);
+	free(tmp);
+}
+

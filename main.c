@@ -1,7 +1,5 @@
 #include "monty.h"
 #include "buf.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * main - main function for monty interpreter
  * @argc: argument count
@@ -10,7 +8,7 @@
  */
 int main(int argc, string argv[])
 {
-	char *command;
+	string command;
 	FILE *file;
 	size_t n = 0;
 	/*string str = NULL;*/
